@@ -3,11 +3,17 @@ html, body{
   height: 100%;
   margin: auto;
 }
-.userArea{
-  background-color: #aeffb5;
+h3 {
+  display: inline;
+}
+.userBar{
   width: 100%;
   position: relative;
-  height: 35px;
+  height: 25px;
+}
+.userArea li > a{
+  color : #525252;
+  font-family: "메이플스토리";
 }
 .linkRegister {
   position: absolute;
@@ -25,7 +31,7 @@ html, body{
   right: 130px;
 }
 #navBar{
-  background-color: #aeafff;
+  background-color: #8d8d8d;
   width: 100%;
   height: 35px;
   margin-top: -20px;
@@ -33,10 +39,6 @@ html, body{
 }
 .barList{
   height: 35px;
-}
-.userArea > a{
-  color : rgb(255, 116, 116);
-  font-family: "메이플스토리";
 }
 .navList > ul{
   display: flex;
@@ -56,7 +58,7 @@ a{
   outline: none;
 }
 .navList li > a{
-  color : black;
+  color : white;
   font-size: 25px;
   font-family: "메이플스토리";
 }
@@ -66,7 +68,6 @@ a{
   /*css에서 height를 100%로 만들고싶으면 vh사용
   또한, html, body도 height를 100%로 설정해야함
   */
-  background-color: aqua;
   float: left;
   position: relative;
   display: flex; /* 부모 박스를 flex로 설정*/
@@ -77,7 +78,7 @@ a{
 .leftSide > .userInfo{
   width: 300px;
   height: 30vh;
-  background-color: #aeafff;
+  background-color: #383838;
   position: absolute;
   top: 0;
   margin-bottom: 10px;
@@ -92,7 +93,7 @@ a{
 .writing > a{
   text-decoration: none;
   outline: none;
-  color : black;
+  color : WHITE;
   font-size: 30px;
   display: flex;
   justify-content: center;
@@ -101,7 +102,7 @@ a{
 .leftSide > .allMenu {
   width: 300px;
   height: 70vh;
-  background-color: #ffaeae;
+  background-color: #838383;
   position: absolute;
   bottom: 0;
 }
@@ -113,16 +114,20 @@ a{
 .userArea2 > a{
   bottom: 0;
   display: flex;
+  color: white;
   justify-content: center;
+  text-decoration: none;
+  outline: none;
 }
-.greetings {
+.begLogin {
   width: 300px;
   position: absolute;
   top: 100px;
 }
-.greetings p{
+.begLogin p{
   font-size: 30px;
   display: flex;
+  color : WHITE;
   flex-direction: column;
   align-items: center;
   margin: 0;
@@ -139,8 +144,23 @@ a{
   color : black;
 }
 #groupB.rightSide{
-  width: 780px;
+  width: 770px;
   height: 100vh;
-  background-color: bisque;
+  border: solid 5px;
+  border-color: #8d8d8d;
   float: right;
+}
+.announcement {
+  position: relative;
+}
+.announcement > a{
+  position: absolute;
+  right: 10px;
+}
+.freeBoard {
+  position: relative;
+}
+.freeBoard > a{
+  position: absolute;
+  right: 10px;
 }
