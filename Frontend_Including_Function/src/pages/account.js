@@ -131,29 +131,38 @@ function Account(){
 
     return (
         <div>
-            <header>
-                <h1>Account</h1>
-                <hr />
-            </header>
-            <main>
-                id<br />
-                <input type="text" value={account.user_id} onChange={handleChangeID} /><button onClick={handleCheckID}>Check</button><br />
-                password<br />
-                <input type="password" value={account.user_password} onChange={handleChangePW} /><br />
-	    	    nickname<br />
-	    	    <input type="text" value={account.user_nickname} onChange={handleChangeNN} /><button onClick={handleCheckNN}>Check</button><br />
-                E-mail<br />
-                <input type="text" value={account.Email} onChange={handleChangeMail} /><button onClick={handleSendmail}>Sendmail</button>
-                <div style={Visible}>
-                    code<br />
-                    <input type="text" value={Code} onChange={handleChangeCode} /><button onClick={handleCheckCode}>sendCode</button>
+            <div id="header" role="banner">
+                <div className='headName'>
+                    <a href='#'>19Projects</a>
+                    <hr />
                 </div>
-                <br />
-                <button onClick={handleSubmitt}>Submitt</button>
-            </main>
-            <footer>
-                <Button path="/Login" name="login" /> 
-            </footer>
+            </div>
+            <div id='body' role="main">
+                <div className='accountProcess'>
+                    id<br />
+                    <input type="text" value={account.user_id} onChange={handleChangeID} /><button onClick={handleCheckID}>중복확인</button><br />
+                    password<br />
+                    <input type="password" value={account.user_password} onChange={handleChangePW} /><br />
+	    	        nickname<br />
+	    	        <input type="text" value={account.user_nickname} onChange={handleChangeNN} /><button onClick={handleCheckNN}>중복확인</button><br />
+                    E-mail<br />
+                    <input type="text" value={account.Email} onChange={handleChangeMail} /><button onClick={handleSendmail}>메일전송</button>
+                    <div style={Visible}>
+                        code<br />
+                        <input type="text" value={Code} onChange={handleChangeCode} /><button onClick={handleCheckCode}>sendCode</button>
+                    </div>
+                    <br />
+                    <button onClick={handleSubmitt}>계정생성</button>
+                </div>
+                <div className='ifHaveId'>
+                    <hr/>
+                    <p>
+                        계정이 있으신가요?<br/>
+                        로그인페이지로 이동
+                    </p>
+                    <Button path="/Login" name="로그인" />
+                </div>
+            </div>
         </div>
     );
 }
