@@ -1,21 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 const frontImgImg = require("./Img/frontImg.jpg");
+const plusImg = require("./Img/+.png");
 
 function App() {
   return (
     <div>
       <div id="header" role="banner">
-        <div className="userArea">
-            <a href="#" className="linkRegister">
-                <span>회원가입</span>
-            </a>
-            <a href="#" className="linkLogin">
-                <span>로그인</span>
-            </a>
-            <a href="#" className="linkFindAccount">
-                <span>아이디/비밀번호찾기</span>
-            </a>
+        <div className="userBar">
+          <ul className="userArea">
+            <li><a href="#" className="linkRegister">회원가입</a></li>
+            <li><a href="#" className="linkLogin">로그인</a>
+            <li><a href="#" className="linkFindAccount">아이디/비밀번호찾기</a></li>
+            </li>
+          </ul>
         </div>
         <div className="frontImg">
             <a href="#">
@@ -37,20 +35,14 @@ function App() {
         <div id="groupA" className="leftSide">
           <div className="userInfo">
             <div className='infoBox'>
-              <div className='greetings'>
+              <div className='begLogin'>
                 <p>19Project</p>
                 <p>로그인을 진행하세요</p>
               </div>
               <div className='userArea2'>
-                <a href="#" className="infoLogin">
-                  <span>로그인</span>
-                </a>
-                <a href="#" className="infoRegister">
-                  <span>회원가입</span>
-                </a>
-                <a href="#" className="infoAccount">
-                  <span>아이디/비밀번호찾기</span>
-                </a>
+                <a href="#" className="infoLogin">로그인</a>
+                <a href="#" className="infoRegister">회원가입</a>
+                <a href="#" className="infoAccount">아이디/비밀번호찾기</a>
               </div>
             </div>
             <div className='writing'>
@@ -79,22 +71,42 @@ function App() {
           </div>
         </div>    
         <div id="groupB" className="rightSide">
-          <section>
-              <h1>19project</h1>
-              <p>흥애 우리 만든다 웹사이트 흥애
-                  여러 기능을 가진 흥애 웹사이트 흥애
-              </p>
-          </section>
+          <div className='greetings'>
+            <h1>19project</h1>
+            <p>흥애 우리 만든다 웹사이트 흥애
+               여러 기능을 가진 흥애 웹사이트 흥애
+            </p>
+          </div>
           <hr />
-          <section>
-              <h3>공지사항</h3>
-              <p></p>
-          </section>
+          <div className='announcement'>
+            <h3>공지사항</h3>
+            <a href="#">
+                <img src={plusImg} width="20" height="20" />
+            </a>
+            <div className='announcementList'>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul> 
+            </div>
+          </div>
           <hr />
-          <section>
-              <h3>자유게시판</h3>
-              <p></p>
-          </section>
+          <div className='freeBoard'>
+            <h3>자유게시판</h3>
+            <a href="#">
+                <img src={plusImg} width="20" height="20" />
+            </a>
+            <div className='freeBoardList'>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul> 
+            </div>
+          </div>
           <hr />
         </div>
       </div>
