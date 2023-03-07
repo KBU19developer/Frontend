@@ -1,7 +1,10 @@
 import PostingMain from './MainPost';
 import Button from '../../../functions/BackButton';
+import useAccessToken from '../../../functions/auth';
 
 function Write(){
+    useAccessToken();
+
     return (
         <div>
             <header>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { now } from '../../../functions/time';
+import { Time } from '../../../functions/time';
 import { useNavigate } from 'react-router-dom';
 import GetCode from './makeCode';
 
@@ -19,7 +19,7 @@ function PostingMain(){ // This contains the functions of inserting data from us
     }
 
     const handleSubmit = e => { // When submit button Clicked then send result to backend
-        let data = { time : now, writer : "tester"};
+        let data = { time : Time(), writer : "tester"};
         let code = { codenum : GetCode(data.writer, data.time) };
         data = Object.assign(data, textgroup, code); // combine two objects
         if(!(textgroup.contents == '' || textgroup.title == ''))

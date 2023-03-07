@@ -2,11 +2,14 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Button from '../../../functions/BackButton';
+import useAccessToken from '../../../functions/auth';
 
 function Posting(){
     const [value, setValue] = useState('');
     const callnum = useParams().postnum;
     const home = useNavigate();
+    useAccessToken();
+
     useEffect(() => {axios.get(`/Board/postnum/${callnum}`)
     .then(result => {
         setValue(result.data);

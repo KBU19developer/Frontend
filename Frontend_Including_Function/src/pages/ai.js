@@ -2,11 +2,13 @@ import loadimg from './images/default.png';
 import { useState } from 'react';
 import axios from 'axios';
 import Button from '../functions/BackButton';
+import useAccessToken from '../functions/auth';
 
 function AI(){
     const [photoV, SetPV] = useState(loadimg);
     const photoSize = {"width" : "200px", "height" : "200px"};
     const [imgValue, SetImg] = useState('');
+    useAccessToken();
     
     const handleChange = e => {
         SetPV(URL.createObjectURL(e.target.files[0])); // when file is uploaded make URL information from file data

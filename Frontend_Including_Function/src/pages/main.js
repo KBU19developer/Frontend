@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
+import useAccessToken from '../functions/auth';
+
 function Main() {
+  useAccessToken();
+  let isLogin = "Login";
   const box_style = { border : "1px solid", width : "250px" };
   const loginText = { fontSize : "13px", paddingLeft : "140px" };
   return (
@@ -20,9 +24,9 @@ function Main() {
           <ol>
            <li><Link  to="/AI">AI Contents</Link></li>
            <li><Link to="/Board/1">bullet board</Link></li>
+           <li><Link to={'/' + isLogin}>{isLogin}</Link></li>
          </ol>
         </div>
-        <Link to="/Login" style={ loginText }>You want to Login?</Link>
       </main>
     </div>
   );

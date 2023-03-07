@@ -1,8 +1,10 @@
 import LoadTitle from "./LoadTitles";
 import LoadBottomNav from "./BottomNav";
 import Button from '../../../functions/BackButton';
+import useAccessToken from '../../../functions/auth';
 
 function Board(){
+    useAccessToken();
     return (
         <div>
             <header>
