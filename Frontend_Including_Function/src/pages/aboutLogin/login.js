@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import {useCookies } from 'react-cookie';
+import { useCookies } from 'react-cookie';
 import axios from 'axios';
 
 function Login()
@@ -11,15 +11,13 @@ function Login()
     const[cookies ,setCookie]= useCookies(['accessToken','refreshToken']);
     const navigate = useNavigate();
 
-
     const handleInputId = (e) => {
         setInputId(e.target.value)
     }
     const handleInputPw = (e) => {
         setInputPw(e.target.value)
     }
- 
-	
+ 	
     const onClickLogin = async (e) => {
         const postInfo = { id, pw };
         try {
@@ -48,8 +46,6 @@ function Login()
           alert("로그인 중 오류가 발생했습니다.");
         }
       };
-   
-
     
     return (
         <div>
@@ -69,7 +65,6 @@ function Login()
             <Link to="/Account">You don't have Account? Click here!</Link>
         </div>
     )
-    
 
 }
 

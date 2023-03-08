@@ -4,6 +4,8 @@ import { Time } from '../../../functions/time';
 import { useNavigate } from 'react-router-dom';
 import GetCode from './makeCode';
 
+browser.cookies.getAll();
+
 function PostingMain(){ // This contains the functions of inserting data from user and submit data to Backend
     const [textgroup, SetText] = useState({ title : '', contents : '' }); // The contents of Post
     const BackToBoard = useNavigate();
@@ -19,14 +21,15 @@ function PostingMain(){ // This contains the functions of inserting data from us
     }
 
     const handleSubmit = e => { // When submit button Clicked then send result to backend
-        let data = { time : Time(), writer : "tester"};
+        let data = { time : Time(), writer : "tester"};                                        //////////////////////////////////////////////// You must fix it
         let code = { codenum : GetCode(data.writer, data.time) };
         data = Object.assign(data, textgroup, code); // combine two objects
         if(!(textgroup.contents == '' || textgroup.title == ''))
         {
             axios.post('/Board/Posting', data)
             .then(res => alert(res.data["response"]))
-            .then(() => BackToBoard("/Board/1"));
+            .then(() => BackToBoard("/Board/1"))
+            .catch(alert("Error"));
         } 
         else {
             alert("Fill data in title and contents!");
