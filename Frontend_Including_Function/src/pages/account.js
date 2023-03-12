@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import axios from 'axios';
 import Button from '../functions/BackButton';
+import './cssFiles/account.css';
+import { Link } from 'react-router-dom';
 
 function Account(){
     const [account, SetAccount] = useState({ user_id : '', user_password : '', user_nickname : '', Email : '' });
@@ -131,29 +133,52 @@ function Account(){
 
     return (
         <div>
-            <header>
-                <h1>Account</h1>
-                <hr />
-            </header>
-            <main>
-                id<br />
-                <input type="text" value={account.user_id} onChange={handleChangeID} /><button onClick={handleCheckID}>Check</button><br />
-                password<br />
-                <input type="password" value={account.user_password} onChange={handleChangePW} /><br />
-	    	    nickname<br />
-	    	    <input type="text" value={account.user_nickname} onChange={handleChangeNN} /><button onClick={handleCheckNN}>Check</button><br />
-                E-mail<br />
-                <input type="text" value={account.Email} onChange={handleChangeMail} /><button onClick={handleSendmail}>Sendmail</button>
-                <div style={Visible}>
-                    code<br />
-                    <input type="text" value={Code} onChange={handleChangeCode} /><button onClick={handleCheckCode}>sendCode</button>
+            <div id="header" role="banner">
+                <div className='headName'>
+                    <ol>
+                        <li><Link  to="/">19 Projects</Link></li>
+                    </ol>
                 </div>
-                <br />
-                <button onClick={handleSubmitt}>Submitt</button>
-            </main>
-            <footer>
-                <Button path="/Login" name="login" /> 
-            </footer>
+            </div>
+            <div id='body' role="main">
+                <div className='account'>
+                    <div className='accountProcess'>
+                        <p>아이디</p>
+                        <span>
+                            <input type="text" value={account.user_id} onChange={handleChangeID} />
+                            <button onClick={handleCheckID}>중복확인</button><br />
+                        </span>
+                        <p>패스워드</p>
+                        <span>
+                            <input type="password" value={account.user_password} onChange={handleChangePW} /><br />
+                        </span>
+	    	            <p>닉네임</p>
+                        <span>
+                            <input type="text" value={account.user_nickname} onChange={handleChangeNN} />
+                            <button onClick={handleCheckNN}>중복확인</button><br />
+                        </span>
+                        <p>이메일</p>
+                        <span>
+                            <input type="text" value={account.Email} onChange={handleChangeMail} />
+                            <button onClick={handleSendmail}>메일전송</button>
+                        </span>
+                        <div style={Visible}>
+                            code<br />
+                            <input type="text" value={Code} onChange={handleChangeCode} />
+                            <button onClick={handleCheckCode}>sendCode</button>
+                        </div>
+                        <br />
+                        <button onClick={handleSubmitt}>계정생성</button>
+                    </div>
+                    <div className='ifHaveId'>
+                        <p>
+                            계정이 있으신가요?<br/>
+                            로그인페이지로 이동
+                        </p>
+                        <Button path="/Login" name="로그인" />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

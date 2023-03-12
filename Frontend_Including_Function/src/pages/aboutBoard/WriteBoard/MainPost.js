@@ -4,8 +4,6 @@ import { Time } from '../../../functions/time';
 import { useNavigate } from 'react-router-dom';
 import GetCode from './makeCode';
 
-browser.cookies.getAll();
-
 function PostingMain(){ // This contains the functions of inserting data from user and submit data to Backend
     const [textgroup, SetText] = useState({ title : '', contents : '' }); // The contents of Post
     const BackToBoard = useNavigate();
