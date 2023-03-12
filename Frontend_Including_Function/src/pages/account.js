@@ -135,48 +135,39 @@ function Account(){
         <div>
             <div id="header" role="banner">
                 <div className='headName'>
-                    <ol>
-                        <li><Link  to="/">19 Projects</Link></li>
-                    </ol>
+                     <Link  to="/">19 Projects</Link>
                 </div>
             </div>
             <div id='body' role="main">
                 <div className='account'>
                     <div className='accountProcess'>
                         <p>아이디</p>
-                        <span>
-                            <input type="text" value={account.user_id} onChange={handleChangeID} />
-                            <button onClick={handleCheckID}>중복확인</button><br />
-                        </span>
+                        <input type="text" value={account.user_id} onChange={handleChangeID} />
+                        <button onClick={handleCheckID}>중복확인</button>
                         <p>패스워드</p>
-                        <span>
-                            <input type="password" value={account.user_password} onChange={handleChangePW} /><br />
-                        </span>
-	    	            <p>닉네임</p>
-                        <span>
-                            <input type="text" value={account.user_nickname} onChange={handleChangeNN} />
-                            <button onClick={handleCheckNN}>중복확인</button><br />
-                        </span>
+                        <input type="password" value={account.user_password} onChange={handleChangePW} />
+                        <p>닉네임</p>
+                        <input type="text" value={account.user_nickname} onChange={handleChangeNN} />
+                        <button onClick={handleCheckNN}>중복확인</button>
                         <p>이메일</p>
-                        <span>
-                            <input type="text" value={account.Email} onChange={handleChangeMail} />
-                            <button onClick={handleSendmail}>메일전송</button>
-                        </span>
-                        <div style={Visible}>
-                            code<br />
-                            <input type="text" value={Code} onChange={handleChangeCode} />
-                            <button onClick={handleCheckCode}>sendCode</button>
-                        </div>
-                        <br />
+                        <input type="text" value={account.Email} onChange={handleChangeMail} />
+                        <button onClick={handleSendmail}>메일전송</button>
+                    </div>
+                    <div style={Visible}>
+                        <p>코드입력</p>
+                        <input type="text" value={Code} onChange={handleChangeCode} />
+                        <button onClick={handleCheckCode}>코드확인</button>
+                    </div>
+                    <div className='registerAcoount'>
                         <button onClick={handleSubmitt}>계정생성</button>
                     </div>
-                    <div className='ifHaveId'>
-                        <p>
-                            계정이 있으신가요?<br/>
-                            로그인페이지로 이동
-                        </p>
-                        <Button path="/Login" name="로그인" />
-                    </div>
+                </div>
+                <div className='ifHaveId'>
+                    <p>
+                        계정이 있으신가요?<br/>
+                        로그인페이지로 이동
+                    </p>
+                    <Button path="/Login" name="로그인" />
                 </div>
             </div>
         </div>

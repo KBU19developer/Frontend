@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
+import './css/login.css';
 
 function Login()
 {
@@ -49,20 +50,28 @@ function Login()
     
     return (
         <div>
-            <h2>Login</h2>
-            <div>
-                <label htmlFor='id'>ID : </label>
-                <input type='text' name='id' value={id} onChange={handleInputId} />
+            <div className='headLine'>
+                <h1>로그인</h1>
             </div>
-            <div>
-                <label htmlFor='pw'>PW : </label>
-                <input type='password' name='pw' value={pw} onChange={handleInputPw} />
-            </div>
-            <div>
-                <button type='button' onClick={onClickLogin}>Login</button>
+            <div className='loginBox'>
+                <div className='typingId'>
+                    <p>아이디</p>
+                    <label htmlFor='id'></label>
+                    <input type='text' name='id' value={id} onChange={handleInputId} />
+                </div>
+                <div className='typingPw'>
+                    <p>비밀번호</p>
+                    <label htmlFor='pw'></label>
+                    <input type='password' name='pw' value={pw} onChange={handleInputPw} />
+                </div>
+                <div className='goLogin'>
+                    <button type='button' onClick={onClickLogin}>로그인</button>
+                </div>
             </div>
             <br />
-            <Link to="/Account">You don't have Account? Click here!</Link>
+            <div className='noAccount'>
+                <Link to="/Account">계정이 없으신가요? 계정만들기</Link>
+            </div>
         </div>
     )
 
