@@ -90,7 +90,7 @@ a{
   align-items: flex-start; /* 자식 박스를 시작점에서 정렬*/
 }
 .leftSide > .userInfo{
-  width: 300px;
+  width: 350px;
   height: 30vh;
   background-color: #383838;
   position: absolute;
@@ -118,7 +118,7 @@ a{
 }
 .leftSide > .allMenu {
   width: 300px;
-  height: 70vh;
+  height: clac(100% - 350px);
   background-color: #383838;
   position: absolute;
   bottom: 0;

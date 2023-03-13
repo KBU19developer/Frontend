@@ -19,6 +19,7 @@ function App() {
         <Route path="/Logout" element={<Logout />} />
         <Route path="/Account" element={<Account />} />
         <Route path='*' element={<h1>Not Found 404</h1>} />
+        <Route path='/FindAccount' element={<FindAccount />} />
       </Routes>
     </div>
   );
